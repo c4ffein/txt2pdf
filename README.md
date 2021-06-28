@@ -2,6 +2,11 @@
 
 Initially forked from https://github.com/jmaupetit
 
+<p align="center">
+[![](https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet)](https://pypi.org/pypi/name/)
+[![](https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet)](https://pypi.org/pypi/name/)
+</p>
+
 ## Installation
 
 The easiest way to go is to use pip:

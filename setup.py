@@ -4,10 +4,16 @@
 txt2pdf - setup file
 """
 
+from os import path
+
 import txt2pdf
 
 from setuptools import setup, find_packages
 
+# Read README.md
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 def parse_requirements(requirements, ignore=("setuptools",)):
     """
@@ -47,6 +53,8 @@ setup(
     author="Julien Maupetit & c4ffein",
     author_email="c4ffein@gmail.com",
     description="txt2pdf, a Markdown to PDF conversion tool",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     license="MIT",
     keywords="markdown converter css pdf",
     classifiers=[
@@ -65,6 +73,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Office/Business",
         "Topic :: Utilities",
     ],
