@@ -60,8 +60,8 @@ class PdfGenerator:
             footer.
         """
         self.main_html = main_html
-        self.header_html = "<header>" + header_html + "</header>" if header_html else None
-        self.footer_html = "<footer>" + footer_html + "</footer>" if footer_html else None
+        self.header_html = f"<header>{header_html}</header>" if header_html else None
+        self.footer_html = f"<footer>{footer_html}</footer>" if footer_html else None
         self.base_url = base_url
         self.stylesheets = stylesheets
         self.side_margin = side_margin
@@ -91,14 +91,14 @@ class PdfGenerator:
         Sets element_height (float) :  Height of this element, will be translated in a html height
         If element is not found, set self."element"_body, self."element_height" to None, 0
         """
-        element_string = getattr(self, element + "_html")
+        element_string = getattr(self, f"{element}_html")
         if not element_string:
             element_height = 0
         else:
             element_body = self._compute_element(element, element_string, 1, 1)
             element_html = PdfGenerator.get_element(element_body.all_children(), element)
             element_height = element_html.height
-        setattr(self, element + "_height", element_height)
+        setattr(self, f"{element}_height", element_height)
 
     def _apply_overlay_on_main(self, main_doc):
         """
@@ -127,7 +127,7 @@ class PdfGenerator:
         margins = "{header_size}px {side_margin} {footer_size}px {side_margin}".format(
             header_size=self.header_height + self.extra_vertical_margin,
             footer_size=self.footer_height + self.extra_vertical_margin,
-            side_margin=str(self.side_margin) + "cm",
+            side_margin=f"{str(self.side_margin)}cm",
         )
         content_print_layout = "@page {size: A4 portrait; margin: %s;}" % margins
 
