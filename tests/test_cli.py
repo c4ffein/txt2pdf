@@ -32,21 +32,21 @@ def _run(cmd):
 
 def test_print_usage_when_no_args():
 
-    stdout, stderr = _run('md2pdf')
-    expected = 'Usage: md2pdf [options] INPUT.MD OUTPUT.PDF'
+    stdout, stderr = _run('txt2pdf')
+    expected = 'Usage: txt2pdf [options] INPUT.MD OUTPUT.PDF'
     assert expected in stderr
 
 
 def test_print_usage_when_partial_args():
 
-    stdout, stderr = _run('md2pdf input.md')
-    expected = 'Usage: md2pdf [options] INPUT.MD OUTPUT.PDF'
+    stdout, stderr = _run('txt2pdf input.md')
+    expected = 'Usage: txt2pdf [options] INPUT.MD OUTPUT.PDF'
     assert expected in stderr
 
 
 def test_raise_IOError_when_markdown_input_file_does_not_exists():
 
-    cmd = 'md2pdf input.md output.pdf'
+    cmd = 'txt2pdf input.md output.pdf'
     stdout, stderr = _run(cmd)
 
     expected = '[Errno 2] No such file or directory: \'input.md\''
@@ -55,7 +55,7 @@ def test_raise_IOError_when_markdown_input_file_does_not_exists():
 
 def test_raise_IOError_when_stylesheet_does_not_exists():
 
-    cmd = 'md2pdf --css=styles.css {} {}'.format(INPUT_MD, OUTPUT_PDF)
+    cmd = 'txt2pdf --css=styles.css {} {}'.format(INPUT_MD, OUTPUT_PDF)
     stdout, stderr = _run(cmd)
 
     expected = '[Errno 2] No such file or directory: \'styles.css\''
@@ -66,7 +66,7 @@ def test_generate_pdf_from_markdown_source_file():
 
     assert not exists(OUTPUT_PDF)
 
-    cmd = 'md2pdf {} {}'.format(INPUT_MD, OUTPUT_PDF)
+    cmd = 'txt2pdf {} {}'.format(INPUT_MD, OUTPUT_PDF)
     stdout, stderr = _run(cmd)
     assert exists(OUTPUT_PDF)
 
@@ -75,6 +75,6 @@ def test_generate_pdf_from_markdown_source_file_and_stylesheet():
 
     assert not exists(OUTPUT_PDF)
 
-    cmd = 'md2pdf --css {} {} {}'.format(INPUT_CSS, INPUT_MD, OUTPUT_PDF)
+    cmd = 'txt2pdf --css {} {} {}'.format(INPUT_CSS, INPUT_MD, OUTPUT_PDF)
     stdout, stderr = _run(cmd)
     assert exists(OUTPUT_PDF)

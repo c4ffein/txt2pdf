@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-md2pdf - setup file
+txt2pdf - setup file
 """
 
-import md2pdf
+import txt2pdf
 
 from setuptools import setup, find_packages
 
@@ -33,16 +33,16 @@ def parse_requirements(requirements, ignore=('setuptools',)):
 
 
 setup(
-    name='md2pdf',
-    version=md2pdf.__version__,
+    name='txt2pdf',
+    version=txt2pdf.__version__,
     packages=find_packages(),
-    scripts=['scripts/md2pdf', ],
+    scripts=['scripts/txt2pdf', ],
     install_requires=parse_requirements('requirements.txt'),
     setup_requires=['pytest-runner', ],
     tests_require=parse_requirements('requirements-dev.txt'),
     author='Julien Maupetit',
     author_email='julien@maupetit.net',
-    description='md2pdf, a Markdown to PDF conversion tool',
+    description='txt2pdf, a Markdown to PDF conversion tool',
     license='MIT',
     keywords='markdown converter css pdf',
     classifiers=[

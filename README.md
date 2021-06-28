@@ -1,17 +1,13 @@
-![md2pdf logo](https://github.com/jmaupetit/md2pdf/raw/master/assets/md2pdf-logo.png)
+# txt2pdf : Convert Markdown files to PDF with styles.
 
-Convert Markdown files to PDF with styles.
-
-[![Build Status](https://travis-ci.org/jmaupetit/md2pdf.svg?branch=master)](https://travis-ci.org/jmaupetit/md2pdf)
-[![Coverage Status](https://coveralls.io/repos/github/jmaupetit/md2pdf/badge.svg?branch=master)](https://coveralls.io/github/jmaupetit/md2pdf?branch=master)
-
+Initially forked from https://github.com/jmaupetit
 
 ## Installation
 
 The easiest way to go is to use pip:
 
 ```bash
-$ pip install md2pdf
+$ pip install txt2pdf
 ```
 
 ## Usage
@@ -20,7 +16,7 @@ $ pip install md2pdf
 
 ```
 Usage:
-    md2pdf [options] INPUT.MD OUTPUT.PDF
+    txt2pdf [options] INPUT.MD OUTPUT.PDF
 
 Options:
     --css=STYLE.CSS
@@ -29,30 +25,30 @@ Options:
 For example, try to generate the project documentation with:
 
 ```bash
-$ md2pdf README.md README.pdf
+$ txt2pdf README.md README.pdf
 ```
 
 Optionally, you may load an external style (restricted to CSS2):
 
 ```bash
-$ md2pdf --css tests/resources/input.css README.md README.pdf
+$ txt2pdf --css tests/resources/input.css README.md README.pdf
 ```
 
 You may also include a HTML header and footer :
 
 ```bash
-$ md2pdf --header tests/resources/header.html README.md README.pdf
-$ md2pdf --footer tests/resources/footer.html README.md README.pdf
+$ txt2pdf --header tests/resources/header.html README.md README.pdf
+$ txt2pdf --footer tests/resources/footer.html README.md README.pdf
 ```
 
 ### As a library
 
-You can use `md2pdf` in your python code, like:
+You can use `txt2pdf` in your python code, like:
 
 ```python
-from md2pdf.core import md2pdf
+from txt2pdf.core import txt2pdf
 
-md2pdf(pdf_file_path,
+txt2pdf(pdf_file_path,
        md_content=None,
        md_file_path=None,
        css_file_path=None,
@@ -79,21 +75,21 @@ Function arguments:
 
 Install [Docker](https://www.docker.com/)
 
-Pull the image:
+Build the image:
 
 ```bash
-$ docker pull jmaupetit/md2pdf
+$ docker build -t txt2pdf .
 ```
 
 Now run your image:
 
 ```bash
-$ docker run --rm -v $PWD:/app jmaupetit/md2pdf --css styles.css INPUT.MD OUTPUT.PDF
+$ docker run --rm -v $PWD:/app txt2pdf --css styles.css INPUT.MD OUTPUT.PDF
 ```
 
 ## Troubleshooting on MacOSX
 
-Ensure, Weasyprint is fully functional before using md2pdf. You will find
+Ensure, Weasyprint is fully functional before using txt2pdf. You will find
 installation instructions in the project documentation:
 [https://weasyprint.readthedocs.io/en/latest/install.html](https://weasyprint.readthedocs.io/en/latest/install.html#macos)
 
@@ -132,13 +128,13 @@ list.
 Clone this project first:
 
 ```bash
-$ git clone git@github.com:jmaupetit/md2pdf.git
+$ git clone git@github.com:jmaupetit/txt2pdf.git
 ```
 
 Install it with its dependencies (ideally in a virtual environment):
 
 ```bash
-$ cd md2pdf
+$ cd txt2pdf
 $ python -m venv venv
 $ source venv/bin/activate
 (venv) $ pip install -r requirements-dev.txt
@@ -170,5 +166,5 @@ $ twine upload dist/* --username 'johndoe' --password 'secret'
 
 ## License
 
-`md2pdf` is released under the MIT License. See the bundled LICENSE file for
+`txt2pdf` is released under the MIT License. See the bundled LICENSE file for
 details.

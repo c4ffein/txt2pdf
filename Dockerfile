@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Julien Maupetit <julien@maupetit.net>
+MAINTAINER c4ffein <c4ffein@gmail.com>
 
 # Install weasyprint dependencies
 RUN apt-get update && \
@@ -15,12 +15,12 @@ RUN apt-get update && \
       shared-mime-info && \
     apt-get -y clean
 
-COPY . /usr/local/src/md2pdf
+COPY . /usr/local/src/txt2pdf
 
-RUN cd /usr/local/src/md2pdf && \
+RUN cd /usr/local/src/txt2pdf && \
     pip3 install -r requirements.txt && \
     python3 setup.py install
 
 VOLUME ["/app"]
 WORKDIR /app
-ENTRYPOINT ["md2pdf"]
+ENTRYPOINT ["txt2pdf"]

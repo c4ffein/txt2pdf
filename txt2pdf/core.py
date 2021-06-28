@@ -8,7 +8,7 @@ from .exceptions import ValidationError
 from .pdfgenerator import PdfGenerator
 
 
-def md2pdf(
+def txt2pdf(
     pdf_file_path,
     md_content=None,
     md_file_path=None,

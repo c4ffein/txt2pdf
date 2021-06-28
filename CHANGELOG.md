@@ -1,11 +1,7 @@
 # Changelog
 
-## Release 0.5 (2021/01/21)
+## Release 0.6 (2021/06/28)
 
-- Add markdown table support
-- Improve python 3 support
-- Improve Docker support
-
-## Release 0.4 (2016/10/12)
-
-* Add current directory as `base_url` to md2pdf script (Fix #6)
+- Initial release from https://github.com/jmaupetit/md2pdf
+- Enables HTML header and footer
+- Provide option to print HTML to stdout
