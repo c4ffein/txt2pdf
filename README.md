@@ -170,7 +170,7 @@ Lint the code via:
 Upload a new release to PyPI:
 
 ```
-$ python setup.py sdist bdist_wheel
+$ python setup.py sdist  # No bdist_wheel as we are pure-Python
 $ twine upload dist/* --username 'johndoe' --password 'secret'
 ```
 
