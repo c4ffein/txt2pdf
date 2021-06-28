@@ -162,7 +162,7 @@ To run the test suite with your active python version (virtual environment):
 Lint the code via:
 
 ```bash
-(venv) $ flake8
+(venv) $ black -l 120
 ```
 
 ### Release a new version
