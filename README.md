@@ -149,7 +149,7 @@ list.
 Clone this project first:
 
 ```bash
-$ git clone git@github.com:jmaupetit/txt2pdf.git
+$ git clone git@github.com:c4ffein/txt2pdf.git
 ```
 
 Install it with its dependencies (ideally in a virtual environment):
