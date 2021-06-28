@@ -3,10 +3,14 @@
 Initially forked from https://github.com/jmaupetit
 
 <p align="center">
-
-    [![](https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet)](https://pypi.org/pypi/name/)
-    [![](https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet)](https://pypi.org/pypi/name/)
-
+  <a href="https://pypi.org/project/txt2pdf/" alt="PyPI">
+      <img src="https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet" /></a>
+  <a href="https://pypi.org/project/txt2pdf/" alt="Python Versions">
+      <img src="https://img.shields.io/pypi/pyversions/txt2pdf.svg?logoColor=blueviolet" /></a>
+  <a href="https://pypi.org/project/txt2pdf/" alt="PyPI Format">
+      <img src="https://img.shields.io/pypi/format/txt2pdf.svg?logoColor=blueviolet" /></a>
+  <a href="https://pypi.org/project/txt2pdf/" alt="License">
+      <img src="https://img.shields.io/pypi/l/txt2pdf.svg?logoColor=blueviolet" /></a>
 </p>
 
 ## Installation
