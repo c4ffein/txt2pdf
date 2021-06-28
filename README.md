@@ -1,6 +1,6 @@
 # txt2pdf : Convert Markdown files to PDF with styles.
 
-Initially forked from https://github.com/jmaupetit
+Initially forked from https://github.com/jmaupetit/md2pdf
 
 <p align="center">
   <a href="https://pypi.org/project/txt2pdf/" alt="PyPI">
