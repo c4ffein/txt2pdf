@@ -21,7 +21,7 @@ def test_generate_pdf_from_raw_markdown():
 
     assert not exists(OUTPUT_PDF)
 
-    txt2pdf(OUTPUT_PDF, md_content='# hi there!')
+    txt2pdf(OUTPUT_PDF, md_content="# hi there!")
     assert exists(OUTPUT_PDF)
 
 

@@ -22,6 +22,7 @@ class PdfGenerator:
     - This generator draws its inspiration and, also a bit of its implementation, from this
       discussion in the library github issues: https://github.com/Kozea/WeasyPrint/issues/92
     """
+
     OVERLAY_LAYOUT = """
         @page {size: A4 portrait; margin: 0;}
         header {position: fixed; top: 0; left: 0; right: 0;}
@@ -36,7 +37,7 @@ class PdfGenerator:
         base_url=None,
         stylesheets=[],
         side_margin=2,
-        extra_vertical_margin=30
+        extra_vertical_margin=30,
     ):
         """
         Parameters
@@ -59,8 +60,8 @@ class PdfGenerator:
             footer.
         """
         self.main_html = main_html
-        self.header_html = "<header>"+header_html+"</header>" if header_html else None
-        self.footer_html = "<footer>"+footer_html+"</footer>" if footer_html else None
+        self.header_html = "<header>" + header_html + "</header>" if header_html else None
+        self.footer_html = "<footer>" + footer_html + "</footer>" if footer_html else None
         self.base_url = base_url
         self.stylesheets = stylesheets
         self.side_margin = side_margin
@@ -74,9 +75,7 @@ class PdfGenerator:
         element_doc = html.render(
             stylesheets=[
                 CSS(string=self.OVERLAY_LAYOUT),
-                CSS(string="""footer, header {
-                    counter-increment: page """+str(page)+""" pages """+str(pages)+""";
-                }"""),
+                CSS(string=f"footer, header {{ counter-increment: page {str(page)} pages {str(pages)}; }}"),
                 *self.stylesheets,
             ]
         )
@@ -92,14 +91,14 @@ class PdfGenerator:
         Sets element_height (float) :  Height of this element, will be translated in a html height
         If element is not found, set self."element"_body, self."element_height" to None, 0
         """
-        element_string = getattr(self, element+"_html")
+        element_string = getattr(self, element + "_html")
         if not element_string:
             element_height = 0
         else:
             element_body = self._compute_element(element, element_string, 1, 1)
             element_html = PdfGenerator.get_element(element_body.all_children(), element)
             element_height = element_html.height
-        setattr(self, element+"_height", element_height)
+        setattr(self, element + "_height", element_height)
 
     def _apply_overlay_on_main(self, main_doc):
         """
@@ -128,7 +127,7 @@ class PdfGenerator:
         margins = "{header_size}px {side_margin} {footer_size}px {side_margin}".format(
             header_size=self.header_height + self.extra_vertical_margin,
             footer_size=self.footer_height + self.extra_vertical_margin,
-            side_margin=str(self.side_margin)+"cm",
+            side_margin=str(self.side_margin) + "cm",
         )
         content_print_layout = "@page {size: A4 portrait; margin: %s;}" % margins
 
