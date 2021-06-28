@@ -49,8 +49,6 @@ def txt2pdf(
         raw_html = markdown_path(md_file_path, extras=extras)
     elif md_content:
         raw_html = markdown(md_content, extras=extras)
-    else:
-        raise ValidationError("No Markdown input.")
 
     # Include header and footer
     if header_file_path:
