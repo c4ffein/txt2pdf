@@ -9,6 +9,7 @@ Options:
     --css=STYLE.CSS
     --header=HEADER.HTML
     --footer=FOOTER.HTML
+    --html-to-stdout
 """
 import os
 import sys
@@ -31,6 +32,7 @@ def main(argv=None):
     css_file_path = arguments.get('--css', None)
     header_file_path = arguments.get('--header', None)
     footer_file_path = arguments.get('--footer', None)
+    print_html_to_stdout = arguments.get('--html-to-stdout', False)
     base_url = os.getcwd()
 
     txt2pdf(pdf_file_path,
@@ -38,6 +40,7 @@ def main(argv=None):
            css_file_path=css_file_path,
            header_file_path=header_file_path,
            footer_file_path=footer_file_path,
+           print_html_to_stdout=print_html_to_stdout,
            base_url=base_url)
 
     return 0

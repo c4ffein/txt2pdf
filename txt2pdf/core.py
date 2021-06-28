@@ -18,6 +18,7 @@ def txt2pdf(
     footer_content=None,
     footer_file_path=None,
     base_url=None,
+    print_html_to_stdout=False,
 ):
     """
     Converts input markdown to styled HTML and renders it to a PDF file.
@@ -32,6 +33,7 @@ def txt2pdf(
         footer_content: input HTML footer raw string content.
         footer_file_path: input HTML footer file path.
         base_url: absolute base path for markdown linked content (as images).
+        print_html_to_stdout: print raw html to console
 
     Returns:
         None
@@ -69,6 +71,17 @@ def txt2pdf(
     css = []
     if css_file_path:
         css.append(CSS(filename=css_file_path))
+
+    # Optional html print to stdout
+    if print_html_to_stdout and raw_html:
+        n = 128
+        print(f"\n{'=' * n}\n{pdf_file_path}\n{'=' * n}\n")
+        if raw_header:
+            print(f"{raw_header}\n{'-' * n}")
+        print(raw_html)
+        if raw_footer:
+            print(f"{'-' * n}\n{raw_footer}")
+        print("=" * n)
 
     # PdfGenerator using Weasyprint
     pdf_generator = PdfGenerator(
