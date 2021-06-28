@@ -50,6 +50,7 @@ setup(
         "pytest-runner",
     ],
     tests_require=parse_requirements("requirements-dev.txt"),
+    url="https://github.com/c4ffein/txt2pdf",
     author="Julien Maupetit & c4ffein",
     author_email="c4ffein@gmail.com",
     description="txt2pdf, a Markdown to PDF conversion tool",
