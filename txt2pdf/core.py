@@ -39,7 +39,7 @@ def txt2pdf(
         None
 
     Raises:
-        ValueError: if md_content and md_file_path are empty.
+        ValidationError: if md_content and md_file_path are empty.
     """
 
     # Convert markdown to html
@@ -50,7 +50,7 @@ def txt2pdf(
     elif md_content:
         raw_html = markdown(md_content, extras=extras)
     else:
-        raise ValueError("No Markdown input.")
+        raise ValidationError("No Markdown input.")
 
     # Include header and footer
     if header_file_path:
@@ -65,7 +65,7 @@ def txt2pdf(
         raw_footer = footer_content
 
     if not len(raw_html):
-        raise ValidationError("Input markdown seems empty")
+        raise ValidationError("Input markdown seems empty.")
 
     # Get styles
     css = []
