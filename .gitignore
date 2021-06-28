@@ -1,0 +1,13 @@
+*.pyc
+*.egg-info
+.cache
+.coverage*
+.DS_Store
+.eggs
+.tox
+build/
+dist/
+env/
+tests/resources/output.pdf
+venv/
+notes.md
