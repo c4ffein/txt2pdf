@@ -4,13 +4,13 @@ Initially forked from https://github.com/jmaupetit
 
 <p align="center">
   <a href="https://pypi.org/project/txt2pdf/" alt="PyPI">
-      <img src="https://img.shields.io/pypi/v/txt2pdf.svg?logoColor=blueviolet" /></a>
+      <img src="https://img.shields.io/pypi/v/txt2pdf?color=blueviolet" /></a>
   <a href="https://pypi.org/project/txt2pdf/" alt="Python Versions">
-      <img src="https://img.shields.io/pypi/pyversions/txt2pdf.svg?logoColor=blueviolet" /></a>
+      <img src="https://img.shields.io/pypi/pyversions/txt2pdf?color=blueviolet" /></a>
   <a href="https://pypi.org/project/txt2pdf/" alt="PyPI Format">
-      <img src="https://img.shields.io/pypi/format/txt2pdf.svg?logoColor=blueviolet" /></a>
+      <img src="https://img.shields.io/pypi/format/txt2pdf?color=blueviolet" /></a>
   <a href="https://pypi.org/project/txt2pdf/" alt="License">
-      <img src="https://img.shields.io/pypi/l/txt2pdf.svg?logoColor=blueviolet" /></a>
+      <img src="https://img.shields.io/pypi/l/txt2pdf?color=blueviolet" /></a>
 </p>
 
 ## Installation
