@@ -1,3 +1,2 @@
 WeasyPrint
-docopt
 markdown2
