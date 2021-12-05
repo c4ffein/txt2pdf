@@ -1,0 +1,59 @@
+[project]
+name = "txt2pdf"
+dynamic = ["version", "description"]
+authors = [{name = "c4ffein", email="c4ffein.work@gmail.com"}]
+readme = "README.md"
+requires-python = ">3.6,<4"
+keywords = ["markdown", "converter", "css", "pdf"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Customer Service",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Office/Business",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "WeasyPrint==52.5",
+    "markdown2==2.4.2",
+    "Pygments==2.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8==4.0.1",
+    "pytest==6.2.5",
+    "tox==3.24.4",
+    "black==21.11b1",
+    "pre-commit==2.16.0",
+]
+deploy = [
+    "flit==3.5.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/c4ffein/txt2pdf"
+Source = "https://github.com/c4ffein/txt2pdf"
+Documentation = "https://github.com/c4ffein/txt2pdf"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.black]
+line-length = 120
+target_version = ['py38']
+include = '\.pyi?$'
+

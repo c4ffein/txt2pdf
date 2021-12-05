@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """txt2pdf - Markdown to PDF conversion tool.
 

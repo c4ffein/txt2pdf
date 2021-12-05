@@ -1,0 +1,21 @@
+#
+# c4ffein's python lint configs
+# https://gist.github.com/c4ffein/794812cd2428b2bc5fae881c61f40892
+#
+# Copyright (c) 2021 c4ffein
+# https://raw.githubusercontent.com/c4ffein/c4ffein/main/legal_files/mit_c4ffein_2021.txt
+
+
+[flake8]
+# Needed until flake8 support pyproject.toml
+max-line-length = 120
+extend-ignore =
+    # See https://github.com/PyCQA/pycodestyle/issues/373
+    E203,
+exclude =
+    .git,
+    __pycache__,
+    assets,
+    build,
+    dist,
+    venv

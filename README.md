@@ -15,7 +15,7 @@ Initially forked from https://github.com/jmaupetit/md2pdf
 
 ## Installation
 
-The easiest way to go is to use pip:
+Available through pip:
 
 ```bash
 $ pip install txt2pdf
@@ -59,8 +59,6 @@ $ txt2pdf --html-to-stdout README.md README.pdf
 ```
 
 ### As a library
-
-You can use `txt2pdf` in your python code, like:
 
 ```python
 from txt2pdf.core import txt2pdf
@@ -139,8 +137,14 @@ CSS property, like:
 font-family: 'Neutraface Condensed';
 ```
 
-Note that you should only define **one single** custom font, not a substitution
-list.
+Note that you should only define **one single** custom font, not a substitution list.
+
+### Using code blocks
+Generate default css defining a class for every code item type:
+
+```bash
+(venv) $ pygmentize -S default -f html -a .codehilite
+```
 
 ## Contributing
 
@@ -157,9 +161,8 @@ Install it with its dependencies (ideally in a virtual environment):
 ```bash
 $ cd txt2pdf
 $ python -m venv venv
-$ source venv/bin/activate
-(venv) $ pip install -r requirements-dev.txt
-(venv) $ python setup.py develop
+$ . venv/bin/activate
+(venv) $ pip install .[dev]
 ```
 
 ### Running the test suite
@@ -178,14 +181,11 @@ Lint the code via:
 
 ### Release a new version
 
-Upload a new release to PyPI:
-
 ```
-$ python setup.py sdist  # No bdist_wheel as we are pure-Python
-$ twine upload dist/* --username 'johndoe' --password 'secret'
+(venv) $ pip install .[deploy]  # install flit if needed
+(venv) $ flit publish --format sdist
 ```
 
 ## License
 
-`txt2pdf` is released under the MIT License. See the bundled LICENSE file for
-details.
+`txt2pdf` is released under the MIT License. See the LICENSE file for details.
