@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from markdown2 import markdown, markdown_path
@@ -83,7 +82,11 @@ def txt2pdf(
 
     # PdfGenerator using Weasyprint
     pdf_generator = PdfGenerator(
-        main_html=raw_html, header_html=raw_header, footer_html=raw_footer, base_url=base_url, stylesheets=css,
+        main_html=raw_html,
+        header_html=raw_header,
+        footer_html=raw_footer,
+        base_url=base_url,
+        stylesheets=css,
     )
 
     # Generate PDF
