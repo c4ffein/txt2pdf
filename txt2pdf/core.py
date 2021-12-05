@@ -44,7 +44,7 @@ def txt2pdf(
 
     # Convert markdown to html
     raw_html = ""
-    extras = ["cuddled-lists", "tables", "fenced-code-blocks", ]
+    extras = ["cuddled-lists", "tables", "fenced-code-blocks"]
     if md_file_path:
         raw_html = markdown_path(md_file_path, extras=extras)
     elif md_content:
@@ -83,11 +83,7 @@ def txt2pdf(
 
     # PdfGenerator using Weasyprint
     pdf_generator = PdfGenerator(
-        main_html=raw_html,
-        header_html=raw_header,
-        footer_html=raw_footer,
-        base_url=base_url,
-        stylesheets=css,
+        main_html=raw_html, header_html=raw_header, footer_html=raw_footer, base_url=base_url, stylesheets=css,
     )
 
     # Generate PDF
