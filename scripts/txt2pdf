@@ -31,19 +31,21 @@ def main(argv=None):
     parser.add_argument(
         "--html-to-stdout", dest="print_html_to_stdout", help="don't print by default", action="store_true"
     )
-    args=parser.parse_args()
+    args = parser.parse_args()
     base_url = os.getcwd()
 
-    txt2pdf(args.pdf_file_path,
-           md_file_path=args.md_file_path,
-           css_file_path=args.css_file_path,
-           header_file_path=args.header_file_path,
-           footer_file_path=args.footer_file_path,
-           print_html_to_stdout=args.print_html_to_stdout,
-           base_url=base_url)
+    txt2pdf(
+        args.pdf_file_path,
+        md_file_path=args.md_file_path,
+        css_file_path=args.css_file_path,
+        header_file_path=args.header_file_path,
+        footer_file_path=args.footer_file_path,
+        print_html_to_stdout=args.print_html_to_stdout,
+        base_url=base_url,
+    )
 
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
