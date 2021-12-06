@@ -43,6 +43,9 @@ deploy = [
     "flit==3.5.1",
 ]
 
+[project.scripts]
+txt2pdf = "txt2pdf.cli:main"
+
 [project.urls]
 Homepage = "https://github.com/c4ffein/txt2pdf"
 Source = "https://github.com/c4ffein/txt2pdf"

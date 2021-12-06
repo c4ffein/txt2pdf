@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 0.7.1 (2021/12/06)
+
+- Fix txt2pdf command accessible after installation through pip
+
 ## Release 0.7 (2021/12/06)
 
 - Switch from setup.py/setup.cfg/requirements to pyproject.toml
