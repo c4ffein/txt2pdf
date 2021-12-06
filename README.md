@@ -189,3 +189,4 @@ Lint the code via:
 ## License
 
 `txt2pdf` is released under the MIT License. See the LICENSE file for details.
+`txt2pdf` was based on [md2pdf](https://github.com/jmaupetit/md2pdf), original LICENSE kept in the licenses directory
