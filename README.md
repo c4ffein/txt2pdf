@@ -1,4 +1,4 @@
-# txt2pdf : Convert Markdown files to PDF with styles.
+# txt2pdf : Convert Markdown files to PDF in Python with optional custom CSS
 
 Initially forked from https://github.com/jmaupetit/md2pdf
 
